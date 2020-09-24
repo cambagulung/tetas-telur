@@ -1,4 +1,3 @@
-#include <Arduino.h>
 #include <Lingu/Config.h>
 #include <Lingu/EggIncubator/Heater/Heater.h>
 #include <Lingu/Relay/Relay.h>
@@ -10,30 +9,27 @@ namespace Lingu
 
     namespace EggIncubator
     {
-        namespace Heater
+        void Heater::setup(Lingu::State::State State)
         {
-            void Heater::setup(Lingu::State::State State)
+            RELAY.setup(HEATER_PIN, HEATER_RELAY_ACTIVE_LOW);
+
+            _STATE = State;
+        }
+
+        void Heater::loop()
+        {
+            float nowTemp, reqTemp;
+
+            nowTemp = _STATE.getNowTemp();
+            reqTemp = _STATE.getReqTemp();
+
+            if (!isnan(nowTemp))
             {
-                RELAY.setup(HEATER_PIN, HEATER_RELAY_ACTIVE_LOW);
+                if (nowTemp < reqTemp)
+                    RELAY.on();
 
-                _STATE = State;
-            }
-
-            void Heater::loop()
-            {
-                float nowTemp, reqTemp;
-
-                nowTemp = _STATE.getNowTemp();
-                reqTemp = _STATE.getReqTemp();
-
-                if (!isnan(nowTemp))
-                {
-                    if (nowTemp < reqTemp)
-                        RELAY.on();
-
-                    else
-                        RELAY.off();
-                }
+                else
+                    RELAY.off();
             }
         } // namespace Heater
     }     // namespace EggIncubator

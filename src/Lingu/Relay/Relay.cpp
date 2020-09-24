@@ -18,7 +18,7 @@ namespace Lingu
                 return digitalWrite(_PIN, LOW);
             }
 
-            return digitalWrite(_PIN, HIGH);
+            digitalWrite(_PIN, HIGH);
         }
 
         void Relay::off(void)
@@ -28,7 +28,7 @@ namespace Lingu
                 return digitalWrite(_PIN, HIGH);
             }
 
-            return digitalWrite(_PIN, LOW);
+            digitalWrite(_PIN, LOW);
         }
     } // namespace Relay
 } // namespace Lingu

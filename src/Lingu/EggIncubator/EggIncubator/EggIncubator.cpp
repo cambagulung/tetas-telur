@@ -1,5 +1,4 @@
-#include <Arduino.h>
-#include <Lingu/EggIncubator/EggIncubator.h>
+#include <Lingu/EggIncubator/EggIncubator/EggIncubator.h>
 #include <Lingu/EggIncubator/Heater/Heater.h>
 #include <Lingu/State/State.h>
 
@@ -9,7 +8,7 @@ namespace Lingu
 
     namespace EggIncubator
     {
-        Heater::Heater HEATER;
+        Heater HEATER;
 
         void EggIncubator::setup()
         {

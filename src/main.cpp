@@ -1,6 +1,4 @@
-#include <Arduino.h>
-#include <Lingu/EggIncubator/EggIncubator.h>
-#include <Lingu/State/State.h>
+#include <Lingu/EggIncubator/EggIncubator/EggIncubator.h>
 
 Lingu::EggIncubator::EggIncubator EGG_ICUBATOR;
 
