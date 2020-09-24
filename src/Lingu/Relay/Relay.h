@@ -14,7 +14,7 @@ namespace Lingu
             bool _ACTIVE_LOW;
 
         public:
-            Relay(uint8_t PIN, bool ACTIVE_LOW = false);
+            void setup(uint8_t PIN, bool ACTIVE_LOW = false);
             void on(void);
             void off(void);
         };
