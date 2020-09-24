@@ -17,7 +17,7 @@ namespace Lingu
 
         void EggIncubator::loop()
         {
-            //
+            HEATER.loop();
         }
     } // namespace EggIncubator
 } // namespace Lingu
