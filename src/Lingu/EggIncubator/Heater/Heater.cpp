@@ -1,7 +1,7 @@
 #include <Lingu/Config.h>
 #include <Lingu/EggIncubator/Heater/Heater.h>
+#include <Lingu/EggIncubator/State/State.h>
 #include <Lingu/Relay/Relay.h>
-#include <Lingu/State/State.h>
 
 namespace Lingu
 {
@@ -9,7 +9,7 @@ namespace Lingu
 
     namespace EggIncubator
     {
-        void Heater::setup(Lingu::State::State State)
+        void Heater::setup(State State)
         {
             RELAY.setup(HEATER_PIN, HEATER_RELAY_ACTIVE_LOW);
 
@@ -23,7 +23,7 @@ namespace Lingu
             nowTemp = _STATE.getNowTemp();
             reqTemp = _STATE.getReqTemp();
 
-            if (!isnan(nowTemp))
+            if (!isnan(nowTemp)) // Mengabaikan jika pembacaan gagal.
             {
                 if (nowTemp < reqTemp)
                     RELAY.on();

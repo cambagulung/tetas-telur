@@ -1,12 +1,9 @@
-#ifndef LINGU_STATE_STATE_H
-#define LINGU_STATE_STATE_H
-
-#include <Arduino.h>
-#include <Lingu/Config.h>
+#ifndef LINGU_EGG_INCUBATOR_STATE_H
+#define LINGU_EGG_INCUBATOR_STATE_H
 
 namespace Lingu
 {
-    namespace State
+    namespace EggIncubator
     {
         class State
         {

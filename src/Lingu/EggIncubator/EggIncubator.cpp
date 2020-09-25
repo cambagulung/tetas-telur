@@ -1,22 +1,25 @@
-#include <Lingu/EggIncubator/EggIncubator/EggIncubator.h>
-#include <Lingu/EggIncubator/Heater/Heater.h>
-#include <Lingu/State/State.h>
+#include "EggIncubator.h"
+#include "DHT/DHT.h"
+#include "Heater/Heater.h"
+#include "State/State.h"
 
 namespace Lingu
 {
-    State::State STATE;
-
     namespace EggIncubator
     {
+        DHT DHT_MODULE;
+        State STATE;
         Heater HEATER;
 
         void EggIncubator::setup()
         {
+            DHT_MODULE.setup(STATE);
             HEATER.setup(STATE);
         }
 
         void EggIncubator::loop()
         {
+            DHT_MODULE.loop();
             HEATER.loop();
         }
     } // namespace EggIncubator
