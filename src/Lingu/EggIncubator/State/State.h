@@ -11,6 +11,7 @@ namespace Lingu
             float nowTemp, nowHumi, reqTemp, reqHumi;
 
         public:
+            State();
             void setNowTemp(float temp);
             void setReqTemp(float temp);
             void setNowHumi(float humi);

@@ -1,5 +1,5 @@
-#ifndef LINGU_EGG_INCUBATOR_DHT_H
-#define LINGU_EGG_INCUBATOR_DHT_H
+#ifndef LINGU_EGG_INCUBATOR_DISPLAY_H
+#define LINGU_EGG_INCUBATOR_DISPLAY_H
 
 #include <Lingu/EggIncubator/State/State.h>
 
@@ -7,16 +7,16 @@ namespace Lingu
 {
     namespace EggIncubator
     {
-        class DHT
+        class Display
         {
         private:
             State _STATE;
-
         public:
-            DHT();
+            Display();
             void setup(State State);
             void loop(void);
         };
+
     } // namespace EggIncubator
 } // namespace Lingu
 

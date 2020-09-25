@@ -4,6 +4,14 @@ namespace Lingu
 {
     namespace EggIncubator
     {
+        State::State()
+        {
+            setNowHumi(0);
+            setNowTemp(0);
+            setReqHumi(0);
+            setReqTemp(0);
+        }
+
         float State::getNowHumi(void)
         {
             return nowHumi;

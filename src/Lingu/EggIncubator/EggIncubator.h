@@ -8,6 +8,7 @@ namespace Lingu
         class EggIncubator
         {
         public:
+            EggIncubator();
             void setup();
             void loop();
         };

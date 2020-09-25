@@ -5,6 +5,11 @@ namespace Lingu
 {
     namespace Relay
     {
+        Relay::Relay()
+        {
+            setup(0, false);
+        }
+
         void Relay::setup(uint8_t PIN, bool ACTIVE_LOW)
         {
             _PIN = PIN;

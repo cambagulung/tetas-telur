@@ -13,6 +13,7 @@ namespace Lingu
             State _STATE;
 
         public:
+            Heater();
             void setup(State State);
             void loop();
         };

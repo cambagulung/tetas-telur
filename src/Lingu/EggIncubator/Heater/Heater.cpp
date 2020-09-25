@@ -9,6 +9,8 @@ namespace Lingu
 
     namespace EggIncubator
     {
+        Heater::Heater() {}
+
         void Heater::setup(State State)
         {
             RELAY.setup(HEATER_PIN, HEATER_RELAY_ACTIVE_LOW);

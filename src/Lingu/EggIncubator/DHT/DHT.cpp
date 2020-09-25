@@ -1,8 +1,7 @@
 #include <DHT.h>
 #include <Lingu/Config.h>
+#include <Lingu/EggIncubator/DHT/DHT.h>
 #include <Lingu/EggIncubator/State/State.h>
-
-#include "DHT.h"
 
 DHT DHT_MODULE(DHT_PIN, DHT_TYPE);
 
@@ -10,6 +9,8 @@ namespace Lingu
 {
   namespace EggIncubator
   {
+    DHT::DHT() {}
+
     void DHT::setup(State State)
     {
       DHT_MODULE.begin();
