@@ -1,15 +1,20 @@
 #include <Arduino.h>
+#include <Lingu/Data/Store.hpp>
+#include <Lingu/Pusher/Pusher.hpp>
+#include <Lingu/Executor/Executor.hpp>
 
-#include "Lingu/EggIncubator/EggIncubator.h"
+Lingu::Data::Store store;
 
-Lingu::EggIncubator::EggIncubator EGG_INCUBATOR;
+Lingu::Pusher pusher(store);
+Lingu::Executor executor(store);
 
 void setup()
 {
-  EGG_INCUBATOR.setup();
+    //
 }
 
 void loop()
 {
-  EGG_INCUBATOR.loop();
+    pusher.loop();
+    executor.loop();
 }

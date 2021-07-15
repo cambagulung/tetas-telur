@@ -1,5 +1,6 @@
 #include <Arduino.h>
-#include <Lingu/Relay/Relay.h>
+
+#include <Lingu/Module/Relay/Relay.hpp>
 
 namespace Lingu
 {
