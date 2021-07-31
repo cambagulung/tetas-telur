@@ -12,8 +12,6 @@ namespace Lingu
         Data::Store _store;
 
     public:
-        Executor(Data::Store store);
-
         void
         setup(Data::Store store),
             loop(void);

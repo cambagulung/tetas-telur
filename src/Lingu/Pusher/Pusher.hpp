@@ -12,8 +12,6 @@ namespace Lingu
         /* data */
 
     public:
-        Pusher(Data::Store store);
-
         void
         setup(Data::Store store),
             loop(void);

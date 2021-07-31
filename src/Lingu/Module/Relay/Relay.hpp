@@ -1,25 +1,26 @@
-#ifndef LINGU_RELAY_RELAY_H
-#define LINGU_RELAY_RELAY_H
+#ifndef LINGU_MODULE_RELAY_HPP
+#define LINGU_MODULE_RELAY_HPP
 
 #include <Arduino.h>
 
 namespace Lingu
 {
-    namespace Relay
+    namespace Module
     {
         class Relay
         {
         private:
-            uint8_t _PIN;
-            bool _ACTIVE_LOW;
+            uint8_t _pin;
+            bool _active_low;
 
         public:
-            Relay();
-            void setup(uint8_t PIN, bool ACTIVE_LOW = false);
-            void on(void);
-            void off(void);
+            Relay(uint8_t pin, bool active_low = false);
+
+            void setup(uint8_t pin, bool active_low = false),
+                on(void),
+                off(void);
         };
-    } // namespace Relay
+    }
 } // namespace Lingu
 
 #endif

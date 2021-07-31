@@ -1,40 +1,39 @@
 #include <Arduino.h>
-
 #include <Lingu/Module/Relay/Relay.hpp>
 
 namespace Lingu
 {
-    namespace Relay
+    namespace Module
     {
-        Relay::Relay()
+        Relay::Relay(uint8_t pin, bool active_low)
         {
-            setup(0, false);
+            setup(pin, active_low);
         }
 
-        void Relay::setup(uint8_t PIN, bool ACTIVE_LOW)
+        void Relay::setup(uint8_t pin, bool active_low)
         {
-            _PIN = PIN;
-            _ACTIVE_LOW = ACTIVE_LOW;
+            _pin = pin;
+            _active_low = active_low;
         }
 
         void Relay::on(void)
         {
-            if (_ACTIVE_LOW)
+            if (_active_low)
             {
-                return digitalWrite(_PIN, LOW);
+                return digitalWrite(_pin, LOW);
             }
 
-            digitalWrite(_PIN, HIGH);
+            digitalWrite(_pin, HIGH);
         }
 
         void Relay::off(void)
         {
-            if (_ACTIVE_LOW)
+            if (_active_low)
             {
-                return digitalWrite(_PIN, HIGH);
+                return digitalWrite(_pin, HIGH);
             }
 
-            digitalWrite(_PIN, LOW);
+            digitalWrite(_pin, LOW);
         }
-    } // namespace Relay
+    }
 } // namespace Lingu

@@ -1,20 +1,20 @@
 #include <Arduino.h>
 #include <Lingu/Data/Store.hpp>
-#include <Lingu/Pusher/Pusher.hpp>
 #include <Lingu/Executor/Executor.hpp>
+#include <Lingu/Pusher/Pusher.hpp>
 
-Lingu::Data::Store store;
-
-Lingu::Pusher pusher(store);
-Lingu::Executor executor(store);
+Lingu::Executor EXECUTOR;
+Lingu::Pusher PUSHER;
+Lingu::Data::Store STORE;
 
 void setup()
 {
-    //
+    EXECUTOR.setup(STORE);
+    PUSHER.setup(STORE);
 }
 
 void loop()
 {
-    pusher.loop();
-    executor.loop();
+    PUSHER.loop();
+    EXECUTOR.loop();
 }
